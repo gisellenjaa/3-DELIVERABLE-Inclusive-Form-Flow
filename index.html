@@ -36,19 +36,53 @@
                     <input id="name" name="name" type="text" autocomplete="name">
                 </div>
                 <div class="field">
+                    <label for="student-id">Student ID</label>
+                    <input id="student-id" name="student-id" type="text">
+                </div>
+                <div class="field">
                     <label for="email">Email address (required)</label>
                     <input id="email" name="email" type="email" autocomplete="email" required>
                 </div>
             </fieldset>
+
             <fieldset>
-                <legend>F3 · Request choices</legend>
+                <legend>F3 · Type of opportunity interested in</legend>
                 <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
-                <label class="choice">
-                    <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option
-                    B</label>
+                <div class="field">
+                    <input type="checkbox" id="part-time" name="part-time">
+                    <label for="part-time">Part-time</label>
+                    <input type="checkbox" id="full-time" name="full-time">
+                    <label for="full-time">Full-time</label>
+                    <input type="checkbox" id="internship" name="internship">
+                    <label for="internship">Internship</label>
+                </div>
             </fieldset>
+
+            <fieldset>
+                <legend>Student Program Information</legend>
+
+                <div class="field">
+                    <label for="program">Choose a program:</label>
+
+                    <select name="program" id="program">
+                        <option value="NONE">--Choose Program--</option>
+                        <option value="accounting">Accounting</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="psychology">Psychology</option>
+                    </select>
+                </div>
+
+                <!--TODO: Change to study or alumni-->
+                <div class="field">
+                    <label class="choice"><input type="radio" name="request_type" value="graduating"> Graduating
+                        2027</label>
+                    <label class="choice"><input type="radio" name="request_type" value="not-Graduating"> NOT graduating
+                        2027</label>
+                </div>
+            </fieldset>
+
             <div class="field">
+                <!--TO DO: Add character limit for textbox-->
                 <label for="details">Request details</label>
                 <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
                 <textarea id="details" name="details" aria-describedby="details-help"></textarea>
