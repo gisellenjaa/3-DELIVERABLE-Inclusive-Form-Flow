@@ -4,22 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Inclusive Form Flow</title>
+    <title>Job Fair Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header class="page-header">
         <p class="eyebrow">F1 · Career Services</p>
-        <h1>Job Fair Student Registration</h1>
-        <p class="lede">This form is for current students that wish to register for the job fair hosted next week. It
+        <h1>Job Fair Registration</h1>
+        <p class="lede">This form is for current students or alumni that wish to register for the job fair hosted next
+            week. It
             will take roughly 2-5 minutes to complete.</p>
     </header>
     <main>
         <section id="expectations">
             <h2>F1 · Before You Register</h2>
             <p>Please fill out the form to register. Required fields are marked as (required). Email is required as it
-                is tied to your student account. Name and graduation choices will help us find partnered employers for
+                is tied to your student account. Name and job type choices will help us find partnered employers for
                 possible interview opportunities on the spot. All your information will be processed through us and is
                 strictly used within the institution.
             </p>
@@ -28,9 +29,11 @@
             </p>
         </section>
         <form action="" method="get">
+            <!--General contact info-->
             <fieldset>
                 <legend>F3 · Contact information</legend>
-                <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                <p class="help">Please enter your information to register. All fields are optional with the exception of
+                    email, as it is tied to your student account.</p>
                 <div class="field">
                     <label for="name">Name</label>
                     <input id="name" name="name" type="text" autocomplete="name">
@@ -45,49 +48,67 @@
                 </div>
             </fieldset>
 
+            <!--Opportunity interest-->
             <fieldset>
                 <legend>F3 · Type of opportunity interested in</legend>
-                <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
+                <p class="help">Please select the type of job opportunity you are interested in.</p>
                 <div class="field">
-                    <input type="checkbox" id="part-time" name="part-time">
-                    <label for="part-time">Part-time</label>
-                    <input type="checkbox" id="full-time" name="full-time">
-                    <label for="full-time">Full-time</label>
-                    <input type="checkbox" id="internship" name="internship">
-                    <label for="internship">Internship</label>
+
+                    <label class="choice" for="part-time"><input type="checkbox" id="part-time" name="opportunity"
+                            value="part-time">Part-time</label>
+
+                    <label class="choice" for="full-time"><input type="checkbox" id="full-time" name="opportunity"
+                            value="full-time">Full-time</label>
+
+                    <label class="choice" for="internship"><input type="checkbox" id="internship" name="opportunity"
+                            value="internship">Internship</label>
                 </div>
             </fieldset>
 
+            <!--Program info-->
             <fieldset>
                 <legend>Student Program Information</legend>
-
                 <div class="field">
                     <label for="program">Choose a program:</label>
 
                     <select name="program" id="program">
-                        <option value="NONE">--Choose Program--</option>
+                        <option value="">--Choose Program--</option>
                         <option value="accounting">Accounting</option>
                         <option value="graphic-design">Graphic Design</option>
                         <option value="psychology">Psychology</option>
                     </select>
                 </div>
+            </fieldset>
 
-                <!--TODO: Change to study or alumni-->
+            <!--Student status-->
+            <fieldset>
+                <legend>Student Status</legend>
                 <div class="field">
-                    <label class="choice"><input type="radio" name="request_type" value="graduating"> Graduating
-                        2027</label>
-                    <label class="choice"><input type="radio" name="request_type" value="not-Graduating"> NOT graduating
-                        2027</label>
+                    <label class="choice"><input type="radio" name="student-status" value="student"> Student</label>
+                    <label class="choice"><input type="radio" name="student-status" value="alumni"> Alumni</label>
                 </div>
             </fieldset>
 
+            <!--Graduation year-->
             <div class="field">
-                <!--TO DO: Add character limit for textbox-->
-                <label for="details">Request details</label>
-                <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                <textarea id="details" name="details" aria-describedby="details-help"></textarea>
+            <label for="graduation-year">Graduation Year (2023-2028)</label>
+                <input id="graduation-year" name="graduation-year" type="number" min="2023" max="2028">
             </div>
-            <button type="submit">Replace with a specific action</button>
+
+            <div class="field">
+                <!--Optional career servies help-->
+                <label for="career-help-text">Optional Career Services Appointment</label>
+                <p class="help" id="optional-help">Please check to set up an appointment with career services to
+                    prepare for the fair (resume building/printing or interview practice). In a short description,
+                    explain the type of help you may need. Career Services will get back to you through email. (Max 100
+                    characters)
+                </p>
+                
+                <label class="help" for="want-help"><input type="checkbox" id="want-help" name="want-help" value="help-needed">I'd like a Career Services appointment.</label>
+                <textarea id="career-help-text" name="optional-help" aria-describedby="optional-help"
+                    maxlength="100"></textarea>
+            </div>
+            <button type="submit">Register</button>
         </form>
         <section id="states">
             <h2>F5 · State and Recovery Specimen</h2>
