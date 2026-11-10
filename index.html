@@ -13,8 +13,7 @@
         <p class="eyebrow">F1 · Career Services</p>
         <h1>Job Fair Registration</h1>
         <p class="lede">This form is for current students or alumni that wish to register for the job fair hosted next
-            week. It
-            will take roughly 2-5 minutes to complete.</p>
+            week. It will take roughly 2-5 minutes to complete.</p>
     </header>
     <main>
         <section id="expectations">
@@ -29,6 +28,11 @@
             </p>
         </section>
         <form action="" method="get">
+            <h3>F4 · Requirements and validation</h3>
+            <p>
+                Only email is required. Graduation Year must be between 2023 and 2028. Appointment textarea box has a
+                limit of 100 characters.
+            </p>
             <!--General contact info-->
             <fieldset>
                 <legend>F3 · Contact information</legend>
@@ -40,11 +44,14 @@
                 </div>
                 <div class="field">
                     <label for="student-id">Student ID</label>
-                    <input id="student-id" name="student-id" type="text">
+                    <input id="student-id" name="student-id" type="text" placeholder="example A123456">
                 </div>
                 <div class="field">
                     <label for="email">Email address (required)</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
+                    <p class="help" id="email-help">Student email required to register. If you do not remember your
+                        student email, please contact career services.</p>
+                    <input id="email" name="email" type="email" placeholder="student@school.edu"
+                        aria-describedby="email-help" autocomplete="email" required>
                 </div>
             </fieldset>
 
@@ -91,8 +98,8 @@
 
             <!--Graduation year-->
             <div class="field">
-            <label for="graduation-year">Graduation Year (2023-2028)</label>
-                <input id="graduation-year" name="graduation-year" type="number" min="2023" max="2028">
+                <label for="graduation-year">Graduation Year (2023-2028)</label>
+                <input id="graduation-year" type="number" name="graduation-year"  min="2023" max="2028">
             </div>
 
             <div class="field">
@@ -103,8 +110,9 @@
                     explain the type of help you may need. Career Services will get back to you through email. (Max 100
                     characters)
                 </p>
-                
-                <label class="help" for="want-help"><input type="checkbox" id="want-help" name="want-help" value="help-needed">I'd like a Career Services appointment.</label>
+
+                <label class="help" for="want-help"><input type="checkbox" id="want-help" name="want-help"
+                        value="help-needed">I'd like a Career Services appointment.</label>
                 <textarea id="career-help-text" name="optional-help" aria-describedby="optional-help"
                     maxlength="100"></textarea>
             </div>

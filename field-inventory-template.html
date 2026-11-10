@@ -51,16 +51,125 @@
             </tr>
         </thead>
         <tbody>
+            <!--Name (text field)-->
+            <tr>
+                <td>Name</td>
+                <td>In case the institute can set up interviews on the spot.</td>
+                <td>No</td>
+                <td>input type="text"</td>
+                <td>name="name"</td>
+                <td>autocomplete="name"</td>
+                <td>none</td>
+                <td>Low sensitivity: Used mostly to have a list of attendees at the fair, and it helps with employer
+                    introductions if there are matching job/interview opportunities.</td>
+            </tr>
+            <!--Student ID (text field)-->
+            <tr>
+                <td>Student ID</td>
+                <td>To confirm student enrolled status (if not alumni).</td>
+                <td>No</td>
+                <td>input type="text"</td>
+                <td>name="student-id"</td>
+                <td>N/A</td>
+                <td>placeholder attribute (A123456)</td>
+                <td>Sensitive: This information handles all about the student info once the institute looks it up.
+                    However it is still optional, because the student email already confirms whether someone was/is a
+                    student or not (so pulling up all of the student's personal information won't be needed).</td>
+            </tr>
+            <!--Email (email field)-->
             <tr>
                 <td>Student email address (required).</td>
                 <td>To be able to submit the form and receive a confirmation.</td>
                 <td>Yes</td>
                 <td>input element with a type="email" attribute.</td>
-                <td>name attribute with a value of "email"</td>
+                <td>name="email"</td>
                 <td>autocomplete attribute with a value of "email"</td>
                 <td>required attribute, with the addition of a placeholder attribute in the input element to aid the
-                    user (with a fake email example: name@example.com).</td>
-                <td>Only the email is required and the information will be handled by the institution as a way to identify the student for registration.</td>
+                    user with a fake email (example: student@school.edu), and with an aria-describedby section.</td>
+                <td>Sensitive: Only the email is required and the information will be handled by the institution as a
+                    way to identify the student for registration.</td>
+            </tr>
+            <!--Type of opportunity (checkboxes)-->
+            <tr>
+                <td>Type of opportunity interested in</td>
+                <td>To see what opportunities can be suggested to the student at the fair.</td>
+                <td>No</td>
+                <td>Three input type="checkbox" describing each opportunity type</td>
+                <td>name="opportunity" (with possible values of part-time, full-time, internship)</td>
+                <td>N/A</td>
+                <td>none</td>
+                <td>Low sensitivity: The institute will use this information to find open opportunities with an
+                    employer.</td>
+            </tr>
+            <!--Program (dropdown/select)-->
+            <tr>
+                <td>Choose a program:</td>
+                <td>So the institute can find and suggest certain employers at the fair that will fit the student's
+                    program</td>
+                <td>No</td>
+                <td>select element with a dropdown list of programs</td>
+                <td>name="program" (with possible values of accounting, graphic-design and psychology)</td>
+                <td>N/A</td>
+                <td>none</td>
+                <td>Low sensitivity: The institute will use this information to find better matches for interview
+                    opportunities within
+                    their field of study.</td>
+            </tr>
+            <!--Student status (radios)-->
+            <tr>
+                <td>Student Status</td>
+                <td>To confirm student enrollment status or previous enrollment, as this fair is an opportunity to
+                    current and past students only. It also confirms if they have their degree for certain job
+                    opportunities.</td>
+                <td>No</td>
+                <td>two input type="radio"</td>
+                <td>name="student-status" (student/alumni)</td>
+                <td>N/A</td>
+                <td>none</td>
+                <td>Low sensitivity: This is for the institue to confirm the student's status, as only enrolled and past
+                    students can
+                    participate in the fair. It also may help better matching opportunities as long graduated students
+                    could potentially find more non-internship type of jobs.</td>
+            </tr>
+            <!--Graduation year (numbers min/max)-->
+            <tr>
+                <td>Graduation Year (2023-2028)</td>
+                <td>For interview opportunities only, as some employers may seek internship immediately or later.</td>
+                <td>No</td>
+                <td>input type="number" with a min and max range for the graduation years</td>
+                <td>name="graduation-year"</td>
+                <td>N/A</td>
+                <td>min value of 2023 and max of 2028</td>
+                <td>Low sensitivity: The range is to also help determine student/alumni status, and to confirm when they
+                    graduate if they
+                    are still a student.</td>
+            </tr>
+            <!--Appointment (checkbox)-->
+            <tr>
+                <td>I'd like a Career Services appointment</td>
+                <td>For in case a student needs help creating or editing their resume, practice interviews or other
+                    career related help they may need.</td>
+                <td>No</td>
+                <td>input type="checkbox"</td>
+                <td>name="want-help" (if checked: value is "help-needed")</td>
+                <td>N/A</td>
+                <td>none</td>
+                <td>Low sensitivity: This checkbox is to confirm whether the student would like additional assitance
+                    with career services
+                    to prepare for the fair.</td>
+            </tr>
+            <!--Appointment help texbox (textarea with character limit)-->
+            <tr>
+                <td>Optional Career Services Appointment</td>
+                <td>Space for the student/alumni to describe any help they need to prepare for the fair.</td>
+                <td>No</td>
+                <td>textarea element</td>
+                <td>name="optional-help"</td>
+                <td>N/A</td>
+                <td>maxlength="100", so only a brief message is allowed for the textbox entry.</td>
+                <td>Low sensitivity: Textbox entry is for the student to describe the type of help or assistance they
+                    want for the career
+                    services appointment. This box is not for sensitive private info.</td>
             </tr>
         </tbody>
     </table>
