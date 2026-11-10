@@ -99,7 +99,7 @@
             <!--Graduation year-->
             <div class="field">
                 <label for="graduation-year">Graduation Year (2023-2028)</label>
-                <input id="graduation-year" type="number" name="graduation-year"  min="2023" max="2028">
+                <input id="graduation-year" type="number" name="graduation-year" min="2023" max="2028">
             </div>
 
             <div class="field">
@@ -120,18 +120,73 @@
         </form>
         <section id="states">
             <h2>F5 · State and Recovery Specimen</h2>
-            <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep
-                this section separate from the primary blank form when necessary to avoid misleading users.</p>
+            <p>This section displays the state of some of the fields when they are Valid, Invalid, Required, Focused,
+                Default, with a Server Error and Disabled.</p>
+
+            <!--Valid-->
+            <div class="field">
+                <label for="valid-name">Name (Valid)</label>
+                <input id="valid-name" type="text" value="John Doe">
+            </div>
+
+            <!--Invalid-->
             <div class="error-summary">
-                <h3>There is a problem with the fictional submission</h3>
-                <p><a href="#error-example">Email address needs attention</a></p>
+                <h3>There is a problem with your submission. (Invalid)</h3>
+                <p><a href="#invalid-student-id">Student ID is invalid</a></p>
             </div>
             <div class="field field-error">
-                <label for="error-example">Email address</label>
-                <input id="error-example" type="email" value="alex.example" aria-invalid="true"
-                    aria-describedby="error-message">
-                <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
+                <label for="invalid-student-id">Student ID</label>
+                <input id="invalid-student-id" type="text" value="N 225987" aria-invalid="true"
+                    aria-describedby="error-student-id">
+                <p id="error-student-id"><strong>Error:</strong> Enter a valid student ID. No spaces or special
+                    characters allowed.</p>
             </div>
+
+            <!--Required-->
+            <div class="error-summary">
+                <h3>There is a problem with your submission. (Required)</h3>
+                <p><a href="#error-required">Email address needs attention</a></p>
+            </div>
+            <div class="field field-error">
+                <label for="error-required">Email address (required)</label>
+                <input id="error-required" type="email" value="" aria-invalid="true"
+                    aria-describedby="error-msg-required" required>
+                <p id="error-msg-required"><strong>Error:</strong> This field is required. Please enter valid
+                    information.
+                </p>
+            </div>
+
+            <!--Focus-->
+            <fieldset>
+                <legend>Student Status (Focus)</legend>
+                <p>Tab to focus the radios, arrow keys to select one.</p>
+                <div class="field">
+                    <label class="choice"><input type="radio" name="focus-example" value="student"> Student</label>
+                    <label class="choice"><input type="radio" name="focus-example" value="alumni"> Alumni</label>
+                </div>
+            </fieldset>
+
+            <!--Default-->
+            <div class="field">
+                <h3>Checkbox state (Default)</h3>
+                <label class="help" for="default-want-help"><input type="checkbox" id="default-want-help">I'd like a
+                    Career Services appointment.</label>
+            </div>
+            <!--Server Static Error-->
+            <div class="error-summary">
+                <h3>There is a problem with your submission. (System Error)</h3>
+                <p id="unknown-message"><a href="#unknown-email"><strong>We could not find your student email. Please
+                            contact Career Services.</strong></a></p>
+            </div>
+            <div class="field field-error">
+                <label for="unknown-email">Email address (required)</label>
+                <p class="help">Student email required to register. If you do not remember your
+                    student email, please contact career services.</p>
+                <input id="unknown-email" type="email" value="j.doe@school.edu" aria-invalid="true"
+                    aria-describedby="unknown-message" required>
+            </div>
+
+            <!--Disabled-->
             <button type="button" disabled>Disabled example</button>
         </section>
         <section id="documentation">
