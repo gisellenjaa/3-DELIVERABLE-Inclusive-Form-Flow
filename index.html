@@ -187,7 +187,74 @@
             </div>
 
             <!--Disabled-->
-            <button type="button" disabled>Disabled example</button>
+            <div class="field">
+                <button type="button" disabled>Disabled example</button>
+            </div>
+
+            <table>
+                <caption>State matrix</caption>
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>What The User Sees</th>
+                        <th>Non-color Cues</th>
+                        <th>Expected Behavior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Default-->
+                    <tr>
+                        <td>Default</td>
+                        <td>Empty fields, unchecked boxes, unselected radios, default select/dropdown, empty textarea.
+                        </td>
+                        <td>Labels, help text, placeholders and "required" is there when it is a required field.</td>
+                        <td>Fill in fields and check and select form options/inputs.</td>
+                    </tr>
+                    <!--Focus-->
+                    <tr>
+                        <td>Focus</td>
+                        <td>When tabbing, the selected field is highlighted by a highlighted border.</td>
+                        <td>Visible outline around the focused field or control.</td>
+                        <td>User can start typing information or select it/check it.</td>
+                    </tr>
+                    <!--Required-->
+                    <tr>
+                        <td>Required</td>
+                        <td>An empty field, but with a label that explicitly says "required".</td>
+                        <td>A "(required)" text appears in the label, and the attribute will warn the user with the error
+                            warning box if they don't enter a correct email.</td>
+                        <td>User has to enter a correct email to be able to submit the form.</td>
+                    </tr>
+                    <!--Valid-->
+                    <tr>
+                        <td>Valid</td>
+                        <td>The name field has a valid name.</td>
+                        <td>The field has a label and a typed value inside.</td>
+                        <td>The entered name is submitted without any form validation errors.</td>
+                    </tr>
+                    <!--Invalid-->
+                    <tr>
+                        <td>Invalid</td>
+                        <td>An entered value with a red container, and an error message.</td>
+                        <td>An error message explaining the expected input.</td>
+                        <td>User has to correct their student ID input.</td>
+                    </tr>
+                    <!--Disabled-->
+                    <tr>
+                        <td>Disabled</td>
+                        <td>A button is disabled and the user can't click it to submit.</td>
+                        <td>Button is greyed out, can't be clicked, and has an unavailable icon on the cursor.</td>
+                        <td>Nothing happens when clicking the button. The action is unavailable.</td>
+                    </tr>
+                    <!--Server Error-->
+                    <tr>
+                        <td>Server-returned error</td>
+                        <td>An error message warning the user about wrong email entered.</td>
+                        <td>The error messages describes that the email entered does not exist.</td>
+                        <td>The user has to contact Career Services.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         <section id="documentation">
             <h2>F2 and F6 · Planning and Evidence</h2>
