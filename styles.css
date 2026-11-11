@@ -1,14 +1,42 @@
 :root {
-    --color-text: #404040;
-    --color-surface: #fff;
-    --color-action: #8c1d40;
-    --color-accent: #ffc627;
-    --color-border: #747474;
-    --color-error: #b3261e;
-    --color-muted: #5c6670;
-    --space-3: 1rem;
-    --radius: .5rem;
+    /*Color*/
+    --maroon-700: #8c1d40;
+    --red-700: #b3261e;
+    --red-50: #fff1f0;
+    --gold-500: #ffc627;
+    --blue-500: #0000EE;
+    --gray-700: #404040;
+    --gray-500: #5c6670;
+    --gray-400: #747474;
+    --gray-200: #d0d0d0;
+    --gray-50: #f1f1f1;
+    --pure-white: #ffffff;
+
+    /* Spacing */
+    --space-med: 1rem;
     --measure: 68ch;
+
+    /* Radius */
+    --radius-med: 0.5rem;
+
+    /* Type */
+    --font-family-default: Arial, sans-serif;
+
+    /* Semantic tokens */
+    --color-background: var(--gray-50);
+    --color-surface: var(--pure-white);
+    --color-text: var(--gray-700);
+    --color-action: var(--maroon-700);
+    --color-accent: var(--gold-500);
+    --color-header: var(--maroon-700);
+    --color-text-on-dark: var(--pure-white);
+    --color-border: var(--gray-400);
+    --color-border-subtle: var(--gray-200);
+    --color-focus: var(--blue-500);
+
+    --color-error: var(--red-700);
+    --color-error-bg: var(--red-50);
+    --color-muted: var(--gray-500);
 }
 
 *,
@@ -21,14 +49,14 @@ body {
     margin: 0;
     color: var(--color-text);
     background: var(--color-surface);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-default);
     line-height: 1.6;
 }
 
 .page-header {
     padding: clamp(2rem, 6vw, 5rem);
     background: var(--color-action);
-    color: #fff;
+    color: var(--color-text-on-dark);
 }
 
 .eyebrow {
@@ -44,7 +72,7 @@ body {
 main {
     max-width: 52rem;
     margin: auto;
-    padding: var(--space-3);
+    padding: var(--space-med);
 }
 
 section,
@@ -65,8 +93,8 @@ form {
 
 fieldset {
     padding: 1rem;
-    border: 1px solid #d0d0d0;
-    border-radius: var(--radius);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-med);
 }
 
 legend,
@@ -117,14 +145,14 @@ button {
     min-height: 44px;
     padding: .75rem 1rem;
     background: var(--color-action);
-    color: #fff;
+    color: var(--color-text-on-dark);
     border: 2px solid var(--color-action);
     border-radius: .25rem;
     font-weight: 700;
 }
 
 :focus-visible {
-    outline: .2rem solid var(--color-accent);
+    outline: .2rem solid var(--color-focus);
     outline-offset: .2rem;
 }
 
@@ -132,7 +160,7 @@ button {
 .field-error {
     padding: 1rem;
     border-left: .4rem solid var(--color-error);
-    background: #fff1f0;
+    background: var(--color-error-bg);
 }
 
 .field-error input {
