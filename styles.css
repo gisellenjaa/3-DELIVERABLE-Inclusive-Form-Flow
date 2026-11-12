@@ -194,6 +194,12 @@ th {
     background: var(--color-background);
 }
 
+/*Table only will scroll instead of having
+the entire page become horizontally scrollable*/
+.table-wrap {
+  overflow-x: auto;
+}
+
 @media (min-width:48rem) {
     .paired-fields {
         display: grid;
