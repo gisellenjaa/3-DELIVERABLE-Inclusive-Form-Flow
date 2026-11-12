@@ -27,7 +27,7 @@
                 You will get a confirmation email after submission.
             </p>
         </section>
-        <form action="" method="get">
+        <form method="get">
             <h3>F4 · Requirements and validation</h3>
             <p>
                 Only email is required. Graduation Year must be between 2023 and 2028. Appointment textarea box has a
@@ -192,7 +192,7 @@
             </div>
 
             <!--State Matrix-->
-            <div class="table-wrap" tabindex="0">
+            <div class="table-wrap" id="state-matrix" tabindex="0">
                 <table>
                     <caption>State matrix</caption>
                     <thead>
@@ -266,6 +266,48 @@
             <h2>F2 and F6 · Planning and Evidence</h2>
             <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI
                 disclosure.</p>
+            <p>
+                <a href="field-inventory-template.html">Field Inventory Template</a>
+            </p>
+            <p>
+                <a href="#state-matrix">State Matrix</a>
+            </p>
+            <h3>Fictional Test Data</h3>
+            <h4>Valid Values</h4>
+            <ul>
+                <li>Name: John Doe</li>
+                <li>Student ID: A123456</li>
+                <li>Email: john@student.edu</li>
+                <li>Program: Graphic Design</li>
+                <li>Status: Student</li>
+                <li>Graduation Year: 2025</li>
+                <li>Opportunity: Full-time, Internship</li>
+                <li>Career Services checkbox and textarea were not completed (as they are not required)</li>
+            </ul>
+            <h4>Invalid Values</h4>
+            <ul>
+                <li>Email: abc (not a proper email format)</li>
+                <li>Year: 2022 and 2029 (the browser warns its out of range)</li>
+                <li>All fields blank: The browser will require the user to enter a valid email</li>
+            </ul>
+
+            <h3>Test log</h3>
+            <p>Test log is in the word document.</p>
+            <p><a href="Required Testing.docx">Required Testing.docx</a></p>
+
+            <h3>AI Disclosure</h3>
+            <p>
+                I used Claude to be able to interpret the assignment requirements as they were quite hard to understand.
+                It reviewed my drafts and checked them against the requirements. It suggested error corrections, token
+                names, the contrast changes and the table scroll fix so I could make sure it wasn't overflowing with
+                smaller viewports (<a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x</a>).
+            </p>
+            <p>
+                I verified with the HTML and CSS validator, I tested the keyboard navigation, the viewports, form errors
+                myself. The code was also written myself, with the exception of token names for the colors, and the
+                overflow-x suggestion (.table-wrap).
+            </p>
         </section>
     </main>
 </body>
